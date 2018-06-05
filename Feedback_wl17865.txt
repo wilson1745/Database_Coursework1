@@ -1,0 +1,47 @@
+CENSUS
+
+Q1: I wanted a single column containing the required answer (-1).
+Q2-3 ok
+Q4: Columns in the wrong order (-1).
+Q5: ok
+Q6: The second column should be called 'average' (-1).
+Q7: Double quotes around a string (-1).
+Q8: ok
+Q9: use UNION ALL (-1) and same problem as Q6 (-1).
+
+Marks: 14 / 20
+
+ELECTIONS
+
+Q7: Double quotes (-1).
+Q8: Double quotes (-1).
+The rest looks fine.
+
+Marks: 18 / 20
+
+MODELLING
+
+Everything in your model looks ok. It's not necessary to have a separate table for photos: you could just have a (nullable) column 'photo' on the product table. Either way you should have a separate column 'photo' somewhere to store the contents of the photo.
+
+I'd recommend being consistent with plurals, that is either pluralise everything e.g. 'Customers', 'Owners' or nothing e.g. 'Product', 'Order'. But this is not a mistake.
+
+In your script, usernames should probably be unique. Since every product is in exactly one category I'd also make category headings unique.
+
+In online shops, it's usual to have 'order' as a separate entity with a one:many relationship to customers, and then have a many:many relationship between orders and products. This matches the way a single order (e.g. "shopping basket") can contain many products but has one payment method and delivery address.
+
+It would also make sense for orders to have a 'status' field or at least a 'shipped' field. As you notice in your examples, a seller needs to know which of their orders are still open.
+
+For your first use case, if you're the seller you probably want a list of all orders for your products, not for a specific customer.
+
+You put the < sign back to front in the second query, compared to your text.
+
+Marks: 12.5 / 20
+
+NORMALISATION
+
+Although you mention relevant facts, for the 2NF violation in schema 1 you need to be clearer about the exact problem, namely {stuId} -> {gender} is a FD, gender is non-key and stuId is a partial candidate key.
+
+For the second schema, the argument is that country is non-key but sits on the left side of a FD. You don't need to talk about adding or removing rows, you just need to point out the facts that violate 3NF.
+
+Marks: 16 / 20
+
