@@ -1,6 +1,6 @@
 # Auto detect text files and perform LF normalization
 * text=auto
-*.sql linguist-language=SQL
+*.sql linguist-language=sql
 
 # Custom for Visual Studio
 *.cs     diff=csharp
